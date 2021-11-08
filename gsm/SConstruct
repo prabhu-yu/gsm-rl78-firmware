@@ -1,0 +1,39 @@
+
+src = [
+    '0_uart.c',
+    '0_main.c',
+    '0_astro_new.c',
+    '0_gsm.c',
+    '0_ubuntu.c',
+    '0_relay.c',
+    '0_misc.c',
+    '0_gsm_util.c',
+    '0_serial.c',
+    '0_dataflash.c',
+    '0_sms_util.c',
+    '0_fixed_timer.c',
+    '0_tank_sensor.c',
+    '0_app_dump.c'
+]
+
+obj = [
+    '0_uart.o',
+    '0_main.o',
+    '0_astro_new.o',
+    '0_gsm.o',
+    '0_ubuntu.o',
+    '0_relay.o',
+    '0_misc.o',
+    '0_gsm_util.o',
+    '0_serial.o',
+    '0_dataflash.o',
+    '0_sms_util.o',
+    '0_fixed_timer.o',
+    '0_tank_sensor.o',
+    '0_app_dump.o'
+]
+
+#obj_list = Object(src, CCFLAGS='-DMACHINE=UBUNTU')
+Program('main.exe', src, LIBS=['m', 'pthread'],
+        CCFLAGS='-DMACHINE=UBUNTU -ggdb')
+
